@@ -13,17 +13,26 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
+
+        {allPostsData.map(({ id, date, title, readingTime, excerpt }) => (
+          <article key={id} className="mb-12">
+            {/* 1. Wrap title + meta in our CSS-module grid */}
+            <div className={utilStyles.postHeader}>
+              <h3 className={utilStyles.postTitle}>
+                <Link href={`/posts/${id}`}>{title}</Link>
+              </h3>
+              <div className={utilStyles.postMeta}>
+                <Date dateString={date} /> &middot; {readingTime}
+              </div>
+            </div>
+
+            {/* 2. Render your Markdown excerpt as HTML */}
+            <div
+              className={utilStyles.postExcerpt}
+              dangerouslySetInnerHTML={{ __html: excerpt }}
+            />
+          </article>
+        ))}
       </section>
     </Layout>
   );

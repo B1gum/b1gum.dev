@@ -56,3 +56,44 @@
 .lightText {
   color: #666;
 }
+
+.postHeader {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+
+.postTitle {
+  font-size:1.5rem;
+  font-weight: 800;
+  color: #000;
+  margin: 0;
+}
+
+.postMeta {
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 0.25rem;
+
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.postExcerpt {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .postHeader {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .postMeta {
+    margin-top: 0;
+  }
+}
