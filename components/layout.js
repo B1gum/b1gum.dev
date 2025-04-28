@@ -6,7 +6,7 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
-const name = 'Noah Rahbek Bigum Hansen';
+export const name = "Noah Rahbek Bigum Hansen"
 export const siteTitle = 'Home | B1gum.dev';
 
 export default function Layout({ children, home }) {
@@ -41,11 +41,14 @@ export default function Layout({ children, home }) {
               priority
               src="/images/profile.jpg"
               className={utilStyles.borderCircle}
-              height={144}
-              width={144}
+              height={96}
+              width={96}
               alt={name}
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className={utilStyles.headingSm}>{name}</h1>
+            <p className={styles.description}>
+              Mechanical Engineering student at Aarhus University. Interested in vim, software development and guitar pedals.
+            </p>
           </>
         ) : (
           <>
@@ -54,8 +57,8 @@ export default function Layout({ children, home }) {
                 priority
                 src="/images/profile.jpg"
                 className={utilStyles.borderCircle}
-                height={108}
-                width={108}
+                height={96}
+                width={96}
                 alt={name}
               />
             </Link>

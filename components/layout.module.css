@@ -13,3 +13,34 @@
 .backToHome {
   margin: 3rem 0 0;
 }
+
+.desktopBreak {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktopBreak {
+    display: inline;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-gap: 2rem;
+    max-width: 90rem;
+  }
+
+  .header {
+    align-items: flex-start;
+  }
+
+  .description {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .backToHome {
+    grid-column: 2;
+  }
+}
