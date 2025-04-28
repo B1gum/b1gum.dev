@@ -12,7 +12,7 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <h1 className={utilStyles.headingLg}>Blog Posts</h1>
 
         {allPostsData.map(({ id, date, title, readingTime, excerpt }) => (
           <article key={id} className="mb-12">

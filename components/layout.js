@@ -5,9 +5,10 @@ import Script from 'next/script';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
-
 import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa"
 export const soMeSize = 28; 
+
+import TabMenu from "./tabMenu"
 
 export const name = "Noah Rahbek Bigum Hansen"
 export const siteTitle = 'Home | B1gum.dev';
@@ -99,7 +100,11 @@ export default function Layout({ children, home }) {
             </h2>
           </>
         )}
+        
+        <TabMenu />
+
       </header>
+
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>

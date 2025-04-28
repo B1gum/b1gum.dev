@@ -1,0 +1,53 @@
+.tabMenu {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 1rem 0;
+  justify-content: center;
+}
+
+.tabMenu a {
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s, border-color 0.2s;
+  border-bottom: 2px solid transparent;
+  border-left: 3px solid transparent;
+}
+
+.tabMenu a:hover {
+  background: rgba(0,0,0,0.05);
+  border-bottom-color: currentColor
+}
+
+.tabMenu a.active {
+  font-weight: bold;
+  border-bottom-color: currentColor;
+}
+
+@media (min-width: 768px) {
+  .tabMenu {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: flex-start;
+  }
+
+  .tabMenu a {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    padding-left: 0.75rem;
+  }
+
+  .tabMenu a.active {
+    font-weight: bold;
+    border-left-color: currentColor;
+    border-bottom-color: transparent;
+    padding-left: 0.25rem;
+  }
+
+  .tabMenu a:hover {
+    border-left-color: currentColor;
+    border-bottom-color: transparent;
+    background: rgba(0,0,0,0.05);
+  }
+}
