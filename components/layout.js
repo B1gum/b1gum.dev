@@ -38,6 +38,7 @@ export default function Layout({ children, home }) {
           console.log(`script loaded correctly, window.FB has been populated`)
         }
       />
+      
       <header className={styles.header}>
         {home ? (
           <>
@@ -50,41 +51,11 @@ export default function Layout({ children, home }) {
               alt={name}
             />
             <h1 className={utilStyles.headingSm}>{name}</h1>
-
-            <div className={styles.socialLinks}>
-              <a
-                href="https://www.linkedin.com/in/noahrbhansen/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedin size={soMeSize} />
-              </a>
-              <a
-                href="https://github.com/b1gum"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaGithub size={soMeSize} />
-              </a>
-              <a
-                href="https://twitter.com/h4ns3mand"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaTwitter size={soMeSize} />
-              </a>
-              <a href="mailto:noahrahbighansen@gmail.com">
-                <FaEnvelope size={soMeSize} />
-              </a>
-            </div>
-            <p className={styles.description}>
-              Mechanical Engineering student at Aarhus University. Interested in vim, software development and guitar pedals.
-            </p>
           </>
         ) : (
           <>
             <Link href="/">
-              <Image
+            <Image
                 priority
                 src="/images/profile.jpg"
                 className={utilStyles.borderCircle}
@@ -95,15 +66,34 @@ export default function Layout({ children, home }) {
             </Link>
             <h2 className={utilStyles.headingLg}>
               <Link href="/" className={utilStyles.colorInherit}>
-                {name}
+                  {name}
               </Link>
             </h2>
-          </>
+            </>
         )}
-        
-        <TabMenu />
 
+        <div className={styles.socialLinks}>
+          <a href="https://www.linkedin.com/in/noahrbhansen/" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin size={soMeSize} />
+          </a>
+          <a href="https://github.com/b1gum" target="_blank" rel="noopener noreferrer">
+            <FaGithub size={soMeSize} />
+          </a>
+          <a href="https://twitter.com/h4ns3mand" target="_blank" rel="noopener noreferrer">
+            <FaTwitter size={soMeSize} />
+          </a>
+          <a href="mailto:noahrahbighansen@gmail.com">
+            <FaEnvelope size={soMeSize} />
+          </a>
+        </div>
+
+        <p className={styles.description}>
+          Mechanical Engineering student at Aarhus University. Interested in vim, software development and guitar pedals.
+        </p>
+
+        <TabMenu />
       </header>
+
 
       <main>{children}</main>
       {!home && (

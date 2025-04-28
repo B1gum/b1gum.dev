@@ -1,10 +1,7 @@
 .container {
   max-width: 36rem;
   padding: 0 1rem;
-  margin-top: 3rem;
-  margin-bottom: 6rem;
-  margin-left: 1rem;
-  margin-right: auto;
+  margin: 3rem 2rem 6rem 2rem;
 }
 
 .header {
@@ -71,5 +68,6 @@
 @media(min-width: 1200px) {
   .container {
     margin-left: calc(1rem + (100vw - 1200px) * 0.7);
+    margin-right: calc(1rem + (100vw - 1200px) * 0.7);
   }
 }

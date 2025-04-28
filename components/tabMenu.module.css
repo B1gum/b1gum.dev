@@ -35,14 +35,13 @@
   .tabMenu a {
     border-bottom-color: transparent;
     border-left-color: transparent;
-    padding-left: 0.75rem;
+    padding-left: 0.55rem;
   }
 
   .tabMenu a.active {
     font-weight: bold;
     border-left-color: currentColor;
     border-bottom-color: transparent;
-    padding-left: 0.25rem;
   }
 
   .tabMenu a:hover {

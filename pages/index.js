@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
+import { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
@@ -7,12 +7,12 @@ import Date from '../components/date';
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout home>
+    <>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h1 className={utilStyles.headingLg}>Blog Posts</h1>
+        <h1 className={utilStyles.headingXl}>Blog Posts</h1>
 
         {allPostsData.map(({ id, date, title, readingTime, excerpt }) => (
           <article key={id} className="mb-12">
@@ -34,7 +34,7 @@ export default function Home({ allPostsData }) {
           </article>
         ))}
       </section>
-    </Layout>
+    </>
   );
 }
 
