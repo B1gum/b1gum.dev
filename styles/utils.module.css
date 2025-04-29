@@ -12,6 +12,7 @@
   font-weight: 800;
   letter-spacing: -0.05rem;
   margin: 1rem 0;
+  color: #331a00;
 }
 
 .headingLg {
@@ -61,13 +62,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
 }
 
 .postHeader {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.5rem;
+  margin-bottom: -0.5rem;
 }
 
 .postTitle,
@@ -82,17 +82,24 @@
 .postMeta {
   font-size: 0.875rem;
   color: #666;
-  margin-top: 0.25rem;
 
   white-space: nowrap;
   flex-shrink: 0;
 }
 
+.cardDescription,
 .postExcerpt {
-  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #444444;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.lectureIntro {
   font-size: 0.9rem;
-  color: #333;
-  line-height: 1.5;
+  color: #444444;
+  line-height: 1.4;
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {

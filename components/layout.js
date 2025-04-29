@@ -6,7 +6,7 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa"
-export const soMeSize = 28; 
+export const soMeSize = 20; 
 
 import TabMenu from "./tabMenu"
 

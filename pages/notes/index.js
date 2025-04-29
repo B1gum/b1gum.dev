@@ -36,19 +36,20 @@ export default function NotesPage({ notes }) {
 
       <section className={utilStyles.headingMd}>
         <h1 className={utilStyles.headingXl}>Lecture Notes</h1>
-        <p>
-          Underneath you will find a selection of my lecture notes for a few different courses taught as part of the bachelor's degree in Mechanical Engineering at Aarhus University. If you are interested in the LaTeX source code for the notes these can be found over on{' '}
-          <a href="https://github.com/B1gum">my GitHub</a>
-        </p>
+        <p className={utilStyles.lectureIntro}> Underneath you will find a selection of my lecture notes for a few different courses taught as part of the bachelor's degree in Mechanical Engineering at Aarhus University. If you are interested in the LaTeX source code for the notes these can be found over on{' '} <a href="https://github.com/B1gum">my GitHub</a> </p>
       </section>
 
       <section className={utilStyles.grid}>
-        {notes.map(({ slug, title, description, language, studyYear, semester, ects}) => (
+        {notes.map(({ slug, title, description, type, language, pdfPath, studyYear, semester, ects}) => (
           <div key={slug} className={utilStyles.card}>
             <div className={utilStyles.postHeader}>
-              <h3 className={utilStyles.cardTitle}>{title}</h3>
+              <h3 className={utilStyles.cardTitle}>
+                <Link href={pdfPath} download>
+                {title}
+                </Link>
+                </h3>
               <div className={utilStyles.postMeta}>
-                {language} &middot; {studyYear} &middot; {semester} &middot; {ects} ECTS
+                {language} &middot; {studyYear} &middot; {semester} &middot; {ects} ECTS &middot; {type}
               </div>
             </div>
             <p className={utilStyles.cardDescription}>{description}</p>
