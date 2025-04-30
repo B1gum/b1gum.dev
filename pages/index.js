@@ -5,6 +5,8 @@ import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
 import styles from '../styles/post.module.css'
+import { MDXRemote } from 'next-mdx-remote'
+
 
 export default function Home({ allPostsData }) {
   return (
@@ -30,10 +32,9 @@ export default function Home({ allPostsData }) {
               <p className={styles.postSeries}>{series}</p>
             )}
 
-            <div
-              className={utilStyles.postExcerpt}
-              dangerouslySetInnerHTML={{ __html: excerpt }}
-            />
+            <div className={utilStyles.postExcerpt}>
+              <MDXRemote {...excerpt} />
+            </div>
           </article>
         ))}
       </section>
@@ -42,7 +43,7 @@ export default function Home({ allPostsData }) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const allPostsData = await getSortedPostsData();
   return {
     props: {
       allPostsData,

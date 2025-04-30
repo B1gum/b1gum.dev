@@ -34,7 +34,7 @@ export default function NotesPage({ notes }) {
   return (
     <>
       <Head>
-        <title>Lecture Notes</title>
+        <title>Notes | B1gum.dev</title>
       </Head>
 
       <section className={utilStyles.headingMd}>

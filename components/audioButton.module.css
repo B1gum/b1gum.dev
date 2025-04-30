@@ -1,0 +1,59 @@
+.audio-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.play-pause-btn {
+  background: transparent; /* No background */
+  color: brown; /* Brown color for the icon */
+  border: none;
+  padding: 0; /* No padding */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.4s ease; /* Smooth scaling on hover */
+  width: 50px; /* Size of the button */
+  height: 50px; /* Size of the button */
+}
+
+.play-pause-btn:hover {
+  transform: scale(1.15); /* Slightly enlarge when hovered */
+}
+
+.play-pause-btn:active {
+  transform: scale(1); /* Button shrinks slightly when clicked */
+}
+
+.icon {
+  transition: transform 0.5s ease-in-out; /* Smooth scaling transition */
+}
+
+.play-path {
+  animation: morphPlayToPause 0.6s ease-in-out forwards; /* Animate the play triangle */
+}
+
+.pause-path {
+  animation: morphPauseToPlay 0.6s ease-in-out forwards; /* Animate the pause bars */
+}
+
+@keyframes morphPlayToPause {
+  0% {
+    d: path("M6 4H8V20H6zM10 4H12V20H10z"); /* Play Triangle */
+  }
+  100% {
+    d: path("M8 5V19L19 12L8 5Z"); /* Pause Bars */
+  }
+}
+
+@keyframes morphPauseToPlay {
+  0% {
+    d: path("M8 5V19L19 12L8 5Z"); /* Pause Bars */
+  }
+  100% {
+    d: path("M6 4H8V20H6zM10 4H12V20H10z"); /* Play Triangle */
+  }
+}
+

@@ -5,6 +5,7 @@ series: 'Cupcake Bakery-Shop Distortion Pedal'
 showToc: true
 ---
 
+
 I was blown away, when I got my first serious practice amp–a Blackstar ID:Core 40. Out-of-the-box it came with five distinct voices from Clean to Crunch with some nice overdrive-options in between. I spent countless hours twisting the tone knobs and flipping through presets in search of the "perfect" distortion sound. Every adjustment yielded something new, but I rarely landed exactly on the sound I imagined in my head.
 
 All this experimenting sparked my curiosity. And as a mechanical engineering student, I knew there was more to learn beyond the amp's interface. I've seen firsthand how minor tweaks in mechanical systems can transform performance, and the same principle applies in electronics. By building my own distortion circuit, I could tweak the components of the system and their connections to cract the exact tone I had been chasing.
@@ -13,45 +14,27 @@ This series will be a guided tour through the design of the pedal. We'll look at
 
 What is a distortion Pedal?
 ===========================
-In 1964, Dave Davies of The Kinks famously slit the cone of his speaker cabinet with a razor blade to rough up its edges&mdash;thus creating the beloved tone on <a
-  href="https://open.spotify.com/track/29SyMC0plk6qw8NMF7lfRL"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  "You Really Got Me"
-</a>. Shortly thereafter Keith Richards prominent use of a <a
-  href="https://en.wikipedia.org/wiki/Maestro_FZ-1_Fuzz-Tone"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Maestro FZ-1 Fuzz-Tone pedal 
-</a> on <a
-  href=https://open.spotify.com/track/1b6AW6uDrtrUN0Y6GJR45j
-  target="_blank"
-  rel="noopener noreferrer"
->
-  "Satisfaction"
-</a> led to a surge in sales for the pedal. This prompted other companies to also start developing distortion pedals and shortly after famous pedals such as the <a
-  href="https://en.wikipedia.org/wiki/Fuzz_Face"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Fuzz Face
-</a> and the <a
-  href="https://en.wikipedia.org/wiki/Big_Muff"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Big Muff Pi
-</a> saw the light of day. (INDSÆT BILLEDER AF PEDALER)
+In 1964, Dave Davies of The Kinks famously slit the cone of his speaker cabinet with a razor blade to rough up its edges&mdash;thus creating the beloved tone on [You Really Got Me](https://open.spotify.com/track/29SyMC0plk6qw8NMF7lfRL). Shortly thereafter Keith Richards prominent use of a [Maestro FZ-1 Fuzz-Tone pedal](https://en.wikipedia.org/wiki/Maestro_FZ-1_Fuzz-Tone) on [Satisfaction](https://open.spotify.com/track/1b6AW6uDrtrUN0Y6GJR45j) led to a surge in sales for the pedal. This prompted other companies to also start developing distortion pedals and shortly after famous pedals such as the [Fuzz Face](https://en.wikipedia.org/wiki/Fuzz_Face) and the [Big Muff Pi](https://en.wikipedia.org/wiki/Big_Muff) saw the light of day. (INDSÆT BILLEDER AF PEDALER)
 
-<iframe
-  src="https://open.spotify.com/embed/track/29SyMC0plk6qw8NMF7lfRL"
-  width="300"
-  height="380"
-  frameBorder="0"
-  allow="encrypted-media"
-></iframe>
+<img src="/images/Fuzz-tone-1.jpg" alt="Maestro FZ-1 Fuzz-Tone" width="200" /> <img src="/images/Big-muff-pi.jpg" alt="Big Muff Pi" width="200" />
+
+All distortion pedals work by amplifying the electric guitar's signal so hard that it exceeds the pedal's threshold, causing the signal waves from the guitar to "clip" or flatten out. This clipping alters the sound creating a more aggressive, buzzy, and saturated tone. Below is a small diagram showing the difference between a clean unclipped signal (in this case a simple sine wave&mdash:a single tone) a "soft clipped" signal with the same frequency and a "hard clipped" signal with the same frequency. Notice how the wave flattens out as the clipping level is increased (often this can be done with a knob on the pedal). You can also listen to the difference between a clean signal (in this case A=440 Hz) and a "soft clipped" and "hard clipped" variant hereof. 
+
+<div style={{ display: 'flex', alignItems: 'center' }}>
+  <img src="/images/clipping_signal_plot.png" alt="Signal Waveforms" style={{ maxWidth: '70%', marginRight: '20px' }} />
+
+  <div style={{ maxWidth: '25%', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+      <AudioButton src="/audio/clean_signal.wav" label="Clean Signal" />
+    </div>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+      <AudioButton src="/audio/soft_clipped_signal.wav" label="Soft Clipped Signal" />
+    </div>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+      <AudioButton src="/audio/hard_clipped_signal.wav" label="Hard Clipped Signal" />
+    </div>
+  </div>
+</div>
 
 
   - Basic functions
