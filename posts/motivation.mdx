@@ -1,0 +1,109 @@
+---
+title: "Why I'm Building a Distortion Pedal"
+date: '2025-04-30'
+series: 'Cupcake Bakery-Shop Distortion Pedal'
+showToc: true
+---
+
+I was blown away, when I got my first serious practice amp–a Blackstar ID:Core 40. Out-of-the-box it came with five distinct voices from Clean to Crunch with some nice overdrive-options in between. I spent countless hours twisting the tone knobs and flipping through presets in search of the "perfect" distortion sound. Every adjustment yielded something new, but I rarely landed exactly on the sound I imagined in my head.
+
+All this experimenting sparked my curiosity. And as a mechanical engineering student, I knew there was more to learn beyond the amp's interface. I've seen firsthand how minor tweaks in mechanical systems can transform performance, and the same principle applies in electronics. By building my own distortion circuit, I could tweak the components of the system and their connections to cract the exact tone I had been chasing.
+
+This series will be a guided tour through the design of the pedal. We'll look at each stage of the signal chain and discuss how it works and which design choices have been made. You'll hear how assymetrical versus symmetrical diode arrangements influence harmonic content, see waveform snapshots at different points in the circuit, and compare frequency-response curves of different tone-stack configurations. Think of it as an engineer's tour of the circuit: audio demos, oscilloscope plots, and annotated schematics that explain the "why" behind every sonic choice.
+
+What is a distortion Pedal?
+===========================
+In 1964, Dave Davies of The Kinks famously slit the cone of his speaker cabinet with a razor blade to rough up its edges&mdash;thus creating the beloved tone on <a
+  href="https://open.spotify.com/track/29SyMC0plk6qw8NMF7lfRL"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  "You Really Got Me"
+</a>. Shortly thereafter Keith Richards prominent use of a <a
+  href="https://en.wikipedia.org/wiki/Maestro_FZ-1_Fuzz-Tone"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Maestro FZ-1 Fuzz-Tone pedal 
+</a> on <a
+  href=https://open.spotify.com/track/1b6AW6uDrtrUN0Y6GJR45j
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  "Satisfaction"
+</a> led to a surge in sales for the pedal. This prompted other companies to also start developing distortion pedals and shortly after famous pedals such as the <a
+  href="https://en.wikipedia.org/wiki/Fuzz_Face"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Fuzz Face
+</a> and the <a
+  href="https://en.wikipedia.org/wiki/Big_Muff"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Big Muff Pi
+</a> saw the light of day. (INDSÆT BILLEDER AF PEDALER)
+
+<iframe
+  src="https://open.spotify.com/embed/track/29SyMC0plk6qw8NMF7lfRL"
+  width="300"
+  height="380"
+  frameBorder="0"
+  allow="encrypted-media"
+></iframe>
+
+
+  - Basic functions
+  - Key sonic characteristics
+  - Everyday examples
+
+3. A very high level overview of the schematic
+  - Block diagram
+
+  - Points of variability
+    - Multiple op-amp stages for customized gain
+    - Diode arrangements
+    - Tone-control network
+
+  - Why it's "complicated"
+    - Each tweakable stage offers a distinct sonic palette
+    - Balancing signal integrity vs. desired distortion
+
+4. Why DIY? The case for building your own
+  - Deepen electronics knowhow
+    - Hands-on-learning
+    - Understanding how component choice shapes tone
+
+  - Customizability and Experimentation
+    - Swap diodes, tweak bias points, add an extra gain stage
+    - Interactive knobs vs. one-size-fits-all commercial units
+
+  - Cost vs. Performance
+    - Bill of materials rundown
+    - The joy of sourcing components
+
+5. What I Hope to Achieve in This Series
+  - Deep dive into each stage
+    - Animated schematics and live-code simulators
+  - PCB layout & fabrication tips
+    - Interactive before/after board views
+  - Assembly & troubleshooting
+    - Drag-and-drop component guides
+  - Tone tests & audio demos
+    - Embedded audio players for A/B comparisons
+  - Final tweaks & enclosure design
+    - 3D-model previews, laser-cut templates
+
+6. How You Can Follow Along
+  - Subscribe for updates: RSS, email, GitHub
+  - Interactive extras:
+    - Sliders to adjust virtual gain/tone and hear the difference
+    - Code snippets to tweak SPICE parameters
+  - Feedback loop: issue tracker for questions or component suggestions
+
+7. Wrap-Up & Call to Action
+  - Reiterate the “why”: learning, customization, craft
+  - Sneak peek of next post: tearing down the schematic block by block
+  - Invite engagement: comments, forks of the demo repo, tone-war samples
+

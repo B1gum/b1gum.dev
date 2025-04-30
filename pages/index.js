@@ -4,6 +4,7 @@ import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
+import styles from '../styles/post.module.css'
 
 export default function Home({ allPostsData }) {
   return (
@@ -14,9 +15,8 @@ export default function Home({ allPostsData }) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h1 className={utilStyles.headingXl}>Blog Posts</h1>
 
-        {allPostsData.map(({ id, date, title, readingTime, excerpt }) => (
+        {allPostsData.map(({ id, date, title, readingTime, excerpt, series }) => (
           <article key={id} className="mb-12">
-            {/* 1. Wrap title + meta in our CSS-module grid */}
             <div className={utilStyles.postHeader}>
               <h3 className={utilStyles.postTitle}>
                 <Link href={`/posts/${id}`}>{title}</Link>
@@ -26,7 +26,10 @@ export default function Home({ allPostsData }) {
               </div>
             </div>
 
-            {/* 2. Render your Markdown excerpt as HTML */}
+            {series && (
+              <p className={styles.postSeries}>{series}</p>
+            )}
+
             <div
               className={utilStyles.postExcerpt}
               dangerouslySetInnerHTML={{ __html: excerpt }}

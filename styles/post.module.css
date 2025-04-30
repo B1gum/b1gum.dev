@@ -30,6 +30,12 @@
   color: #663300;
 }
 
+.postSeries {
+  font-size: 0.875rem;
+  color: #8e5b28;
+  margin: 0.5rem 0 -0.5rem;
+}
+
 .postText {
   font-size: 1rem;
   color: #333333;

@@ -1,6 +1,8 @@
 import '../styles/global.css'
 import { useRouter } from 'next/router'
 import Layout from '../components/layout'
+import { MDXProvider } from '@mdx-js/react'
+import { useMDXComponents } from '../mdx-components'
 
 export default function App({ Component, pageProps }) {
   const { pathname } = useRouter()
@@ -9,13 +11,21 @@ export default function App({ Component, pageProps }) {
   const isNotesIndex = pathname === '/notes'
   const showLayout   = isBlogIndex || isNotesIndex
 
+  const mdxComponents = useMDXComponents({})
+
   if (showLayout) {
     return (
-      <Layout home={true}>
-        <Component {...pageProps} />
-      </Layout>
+      <MDXProvider components={mdxComponents}>
+        <Layout home={true}>
+          <Component {...pageProps} />
+        </Layout>
+      </MDXProvider>
     )
   }
 
-  return <Component {...pageProps} />
+  return (
+    <MDXProvider components={mdxComponents}>
+      <Component {...pageProps} />
+    </MDXProvider>
+  )
 }

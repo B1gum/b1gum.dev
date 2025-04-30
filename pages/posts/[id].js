@@ -19,6 +19,7 @@ export default function Post({ postData }) {
 
       <article className={utilStyles.article}>
         <h1 className={styles.postTitle}>{postData.title}</h1>
+
         <div
           className={styles.postText}
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}

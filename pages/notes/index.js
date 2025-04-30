@@ -4,6 +4,9 @@ import matter from 'gray-matter'
 import Head from 'next/head';
 import utilStyles from '../../styles/utils.module.css';
 import Link from 'next/link'
+import 'katex/dist/katex.min.css'
+import Latex from 'react-latex-next'
+
 
 // Read filenames out of public/notes at build time 
 export async function getStaticProps() {
@@ -36,7 +39,7 @@ export default function NotesPage({ notes }) {
 
       <section className={utilStyles.headingMd}>
         <h1 className={utilStyles.headingXl}>Lecture Notes</h1>
-        <p className={utilStyles.lectureIntro}> Underneath you will find a selection of my lecture notes for a few different courses taught as part of the bachelor's degree in Mechanical Engineering at Aarhus University. If you are interested in the LaTeX source code for the notes these can be found over on{' '} <a href="https://github.com/B1gum">my GitHub</a> </p>
+        <p className={utilStyles.lectureIntro}> Underneath you will find a selection of my lecture notes for a few different courses taught as part of the bachelor's degree in Mechanical Engineering at Aarhus University. If you are interested in the <Latex>$\LaTeX{}$</Latex> source code for the notes these can be found over on{' '} <a href="https://github.com/B1gum">my GitHub</a> </p>
       </section>
 
       <section className={utilStyles.grid}>
