@@ -5,6 +5,7 @@ import { MDXProvider } from '@mdx-js/react'
 import { useMDXComponents } from '../mdx-components'
 import 'katex/dist/katex.min.css'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function App({ Component, pageProps }) {
   const { pathname } = useRouter()
@@ -21,6 +22,7 @@ export default function App({ Component, pageProps }) {
         <Layout home={true}>
           <Component {...pageProps} />
           <Analytics />
+          <SpeedInsights/>
         </Layout>
      </MDXProvider>
     )
@@ -30,6 +32,7 @@ export default function App({ Component, pageProps }) {
     <MDXProvider components={mdxComponents}>
       <Component {...pageProps} />
       <Analytics />
+      <SpeedInsights/>
     </MDXProvider>
   )
 }
