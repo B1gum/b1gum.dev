@@ -1,92 +1,106 @@
 ---
 title: "Why I'm Building a Distortion Pedal"
-date: '2025-04-30'
+date: '2025-05-02'
 series: 'Cupcake Bakery-Shop Distortion Pedal'
 showToc: true
 ---
 
+I was blown away, when I got my first serious practice amp–a Blackstar ID:Core 40. Out-of-the-box it came with five distinct voices from Clean to Crunch with some nice overdrive-options in between. I spent countless hours twisting the tone knobs and cycling through presets chasing the perfect distortion sound I heard in my head but couldn't quite capture.
 
-I was blown away, when I got my first serious practice amp–a Blackstar ID:Core 40. Out-of-the-box it came with five distinct voices from Clean to Crunch with some nice overdrive-options in between. I spent countless hours twisting the tone knobs and flipping through presets in search of the "perfect" distortion sound. Every adjustment yielded something new, but I rarely landed exactly on the sound I imagined in my head.
+Even after dialing in what seemed like a great tone, I found something was always missing: it either lacked punch, felt too compressed or just did not sound right in the mix. This inconsistency sparked my curiosity. As a mechanical engineering student, I understood how small tweaks in a mechanical system can yield big differences in system performance. I knew this principle also had to apply to my guitar tone.
 
-All this experimenting sparked my curiosity. And as a mechanical engineering student, I knew there was more to learn beyond the amp's interface. I've seen firsthand how minor tweaks in mechanical systems can transform performance, and the same principle applies in electronics. By building my own distortion circuit, I could tweak the components of the system and their connections to cract the exact tone I had been chasing.
+By building my own distortion circuit, I could tweak the components of the system and their connections to create the exact tone I had been chasing. No longer would I be limited by fixed diode thresholds or fixed filtering frequencies&mdash;instead, I could choose exatly how the signal is shaped.
 
-This series will be a guided tour through the design of the pedal. We'll look at each stage of the signal chain and discuss how it works and which design choices have been made. You'll hear how assymetrical versus symmetrical diode arrangements influence harmonic content, see waveform snapshots at different points in the circuit, and compare frequency-response curves of different tone-stack configurations. Think of it as an engineer's tour of the circuit: audio demos, oscilloscope plots, and annotated schematics that explain the "why" behind every sonic choice.
+This series will be a guided tour through the pedal. We'll dissect each stage of the signal chain and discuss how it works and which design choices have been made. Along the way you'll encounter:
+  - **KiCad Simulations** showing how the signal behaves in the circuit in theory, including waveform snapshots at different points and frequency response plots of various tone-stack configurations
+
+  - **Audio Demos**, which allow you to hear the differences between the signal at different points in the circuit
+
+  - **Interactive components** that let you interact with the circuit and modify it on your own.
+
+Think of it as an engineer's tour of the circuit: annotated schematics, animated simulations and hands-on KiCad models that let you experiment in-browser. Whether you're purely curious about electronics or eager to build your own pedal, this series will equip you with both practical and theoretical insight.
 
 What is a distortion Pedal?
 ===========================
-In 1964, Dave Davies of The Kinks famously slit the cone of his speaker cabinet with a razor blade to rough up its edges&mdash;thus creating the beloved tone on [You Really Got Me](https://open.spotify.com/track/29SyMC0plk6qw8NMF7lfRL). Shortly thereafter Keith Richards prominent use of a [Maestro FZ-1 Fuzz-Tone pedal](https://en.wikipedia.org/wiki/Maestro_FZ-1_Fuzz-Tone) on [Satisfaction](https://open.spotify.com/track/1b6AW6uDrtrUN0Y6GJR45j) led to a surge in sales for the pedal. This prompted other companies to also start developing distortion pedals and shortly after famous pedals such as the [Fuzz Face](https://en.wikipedia.org/wiki/Fuzz_Face) and the [Big Muff Pi](https://en.wikipedia.org/wiki/Big_Muff) saw the light of day. (INDSÆT BILLEDER AF PEDALER)
+Electric guitars produce a smal, alternating current proportional to the vibrations of the strings. A distortion pedal amplifies the signal beyond a diode or transistor's foward threshold, deliberately "overdriving" the waveform so it clips&mdash; flattening peaks and generating new harmonics. These harmics add grit, sustain and character to the sound.
 
-<img src="/images/Fuzz-tone-1.jpg" alt="Maestro FZ-1 Fuzz-Tone" width="200" /> <img src="/images/Big-muff-pi.jpg" alt="Big Muff Pi" width="200" />
+In 1964, Dave Davies of The Kinks famously slit the cone of his speaker cabinet with a razor blade to rough up its edges, thus creating the beloved tone on [You Really Got Me](https://open.spotify.com/track/29SyMC0plk6qw8NMF7lfRL). Shortly after, Keith Richards' prominent use of a [Maestro FZ-1 Fuzz-Tone pedal](https://en.wikipedia.org/wiki/Maestro_FZ-1_Fuzz-Tone) on [Satisfaction](https://open.spotify.com/track/1b6AW6uDrtrUN0Y6GJR45j) led to a surge in sales for the pedal. This prompted other companies to also start developing distortion pedals and shortly after famous pedals such as the [Fuzz Face](https://en.wikipedia.org/wiki/Fuzz_Face) and the [Big Muff Pi](https://en.wikipedia.org/wiki/Big_Muff) saw the light of day.
 
-All distortion pedals work by amplifying the electric guitar's signal so hard that it exceeds the pedal's threshold, causing the signal waves from the guitar to "clip" or flatten out. This clipping alters the sound creating a more aggressive, buzzy, and saturated tone. Below is a small diagram showing the difference between a clean unclipped signal (in this case a simple sine wave&mdash:a single tone) a "soft clipped" signal with the same frequency and a "hard clipped" signal with the same frequency. Notice how the wave flattens out as the clipping level is increased (often this can be done with a knob on the pedal). You can also listen to the difference between a clean signal (in this case A=440 Hz) and a "soft clipped" and "hard clipped" variant hereof. 
+<div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+  <ImageWithCaption
+    src="/images/Fuzz-tone-1.jpg"
+    alt="Maestro FZ-1 Fuzz-Tone"
+    caption="Maestro FZ-1 Fuzz-Tone"
+    style={{ flex: '0 0 45%' }}
+  />
 
-<div style={{ display: 'flex', alignItems: 'center' }}>
-  <img src="/images/clipping_signal_plot.png" alt="Signal Waveforms" style={{ maxWidth: '70%', marginRight: '20px' }} />
+  <ImageWithCaption
+    src="/images/Big-muff-pi.jpg"
+    alt="Big Muff Pi"
+    caption="Big Muff Pi"
+    style={{ flex: '0 0 30%' }}
+  />
+</div>
 
-  <div style={{ maxWidth: '25%', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-      <AudioButton src="/audio/clean_signal.wav" label="Clean Signal" />
-    </div>
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-      <AudioButton src="/audio/soft_clipped_signal.wav" label="Soft Clipped Signal" />
-    </div>
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-      <AudioButton src="/audio/hard_clipped_signal.wav" label="Hard Clipped Signal" />
-    </div>
+Commonly found in modern pedals are one (or more) of three types of diodes:
+
+  - **Silicon diodes (V<sub>f</sub> ≈ 0.7 V)**: Hard clipping, tight attack, plenty of upper harmonics.
+  - **Germanium diodes (V<sub>f</sub> ≈ 0.3 V)**: Softer threshols, smoother clipping, warmer fuzz.
+  - **LED's (V<sub>f</sub> ≈ 1.8-2 V)**: Very soft clipping, subtle saturation, higher headroom.
+
+Below is a small diagram showing a clean, unclipped sine wave and that same wave with two levels of clipping. Notice how the peaks flatten as clipping increases (for example, by choosing diodes with lower forward voltage). To the right, you can listen to three short audio samples of a clean, soft-clipped, and hard-clipped guitar signal (Check your volume before playing if you are wearing headphones).
+
+
+<div
+  style={{ display: 'flex', alignItems: 'center', gap: '0px'}}>
+  <div style={{ flex: '0 0 70%' }}>
+    <img src="/images/clipping_signal_plot.png" alt="Signal Waveforms" style={{ width: '100%', height: 'auto' }} />
+  </div>
+
+  <div style={{ flex: '0 0 0%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '10px' }}>
+    <AudioButton src="/audio/clean_signal.wav" label="Clean" />
+    <AudioButton src="/audio/soft_clipped_signal.wav" label="Soft Clip" />
+    <AudioButton src="/audio/hard_clipped_signal.wav" label="Hard Clip" />
+  </div>
+
+  <div style={{ flex: '0 0 0%', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '180px' }} >
+    <VolumeSlider vertical />
   </div>
 </div>
 
+A very high level overview of the schematic
+===========================================
+Here's a simplified block diagram of full pedal circuit. Dont worry if it looks comples&mdash;we'll break down every stage in future posts.
+<div>
+  <ImageWithCaption src="/images/block_diagram.svg" alt="Block Diagram" caption="Block diagram of the pedal-circuit" />
+</div>
+Above you see a block diagram of the circuit I am going to be building. It might look a bit daunting at first so I'll slowly go through what happens at each part. 
 
-  - Basic functions
-  - Key sonic characteristics
-  - Everyday examples
+  1. **Input Buffer** &mdash; This is the entry point of the guitar signal. It is designed to have a very high impedance to avoid overworking the pickups of the guitar (I'll go through this more in a later post, but impedance is basically the equivalent of electrical resistance for guitar-signals). 
 
-3. A very high level overview of the schematic
-  - Block diagram
+  2. **First Gain & Clipping Stage** &mdash; The first of two gain/clipping stages. Here the signal is amplified and clipped by silicon diodes. This build-up of this stage is similar to core circuitry from the famous [Ibanez Tube Screamer](https://en.wikipedia.org/wiki/Ibanez_Tube_Screamer) and the hope is that this stage will also be able to at least sort of mimic a Tube Screamer.
 
-  - Points of variability
-    - Multiple op-amp stages for customized gain
-    - Diode arrangements
-    - Tone-control network
+  3. **Voicing Filter** &mdash; This is an adjustable filter where some of the bass can be cut before the second and harder gain stage. The amount of bass that is cut is controlled by a knob.
 
-  - Why it's "complicated"
-    - Each tweakable stage offers a distinct sonic palette
-    - Balancing signal integrity vs. desired distortion
+  4. **Second Gain & Clipping Stage** &mdash; Here the signal is, once again, amplified and then clipped by diodes. Here, however, two switches are implemented before the diodes which lets the user switch between 5 diode pairs and 3 clipping options with the flick of a button.
 
-4. Why DIY? The case for building your own
-  - Deepen electronics knowhow
-    - Hands-on-learning
-    - Understanding how component choice shapes tone
+  5. **Clean Blend** &mdash; Here the signal can be mixed with some of the undistorted signal from the guitar to bring back some definition, especially for high-gain settings.
 
-  - Customizability and Experimentation
-    - Swap diodes, tweak bias points, add an extra gain stage
-    - Interactive knobs vs. one-size-fits-all commercial units
+  6. **Tilt EQ** &mdash; This is an active tilt network that either boosts bass and cuts treble or vice versa. 
 
-  - Cost vs. Performance
-    - Bill of materials rundown
-    - The joy of sourcing components
+  7. **Output Buffer & Bypass** &mdash; The output buffer is designed to have a low impedance so that the signal is ready to either go through another pedal or go into an amplifier. The pedal will also implement a buffered bypass switch.
 
-5. What I Hope to Achieve in This Series
-  - Deep dive into each stage
-    - Animated schematics and live-code simulators
-  - PCB layout & fabrication tips
-    - Interactive before/after board views
-  - Assembly & troubleshooting
-    - Drag-and-drop component guides
-  - Tone tests & audio demos
-    - Embedded audio players for A/B comparisons
-  - Final tweaks & enclosure design
-    - 3D-model previews, laser-cut templates
+This circuit is more elaborate than your average distortion pedal—maybe even more complex than necessary. However, a lot of effort has been put into making sure that each part of the pedal only "does one thing" so to say. Hopefully this means that even with a complex circuit and a lot of knobs that can be adjusted, I am still able to sculpt all the tones I am seeking.
 
-6. How You Can Follow Along
-  - Subscribe for updates: RSS, email, GitHub
-  - Interactive extras:
-    - Sliders to adjust virtual gain/tone and hear the difference
-    - Code snippets to tweak SPICE parameters
-  - Feedback loop: issue tracker for questions or component suggestions
 
-7. Wrap-Up & Call to Action
-  - Reiterate the “why”: learning, customization, craft
-  - Sneak peek of next post: tearing down the schematic block by block
-  - Invite engagement: comments, forks of the demo repo, tone-war samples
+What to Expect from This Series
+=====================================
+This series is going to be a deep dive into each part of the above block diagram. The future more 'theoretical' posts will include small animations and interactive simulations that can help you understand all of the choices that have been made. I will also make circuit simulations using KiCad to confirm that the circuit is behaving as expected in theory and include simulated audio snippets so that you can hear how the guitar signal might sound at each stage. 
 
+I am going to be talking about both the electrical engineering aspects of designing the circuit and choosing the correct components, but I'll also be talking about the other miscellaneous things one has to devote time to when building a pedal, such as soldering and designing an enclosure (the focus will however be on the more electrical side of things).
+
+I will provide the entire schematics for the pedal once the series is finished along with any other files I have for the project (e.g. 3D print-files). Also I will keep track of exactly how much I am going to be spending on building the pedal so you can get an idea about how easily you can get started yourself.
+
+I’m also setting up a mailing list to notify you about new posts, demos, and code releases. If you’re interested in receiving interactive updates as soon as they go live, let me know and I can provide sign‑up details in the next post.
+
+If there are any specific audio, visual, or interactive demos that would clarify any stage please do not hesitate to contact me and I will work on getting it implemented.

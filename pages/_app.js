@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import Layout from '../components/layout'
 import { MDXProvider } from '@mdx-js/react'
 import { useMDXComponents } from '../mdx-components'
+import 'katex/dist/katex.min.css'
 
 export default function App({ Component, pageProps }) {
   const { pathname } = useRouter()
@@ -19,7 +20,7 @@ export default function App({ Component, pageProps }) {
         <Layout home={true}>
           <Component {...pageProps} />
         </Layout>
-      </MDXProvider>
+     </MDXProvider>
     )
   }
 

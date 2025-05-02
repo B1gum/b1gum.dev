@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="233.5224mm"
+   height="191.95505mm"
+   viewBox="0 0 233.5224 191.95505"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="Triangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-10.726362,-10.612526)">
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:35.2;stroke-dasharray:8, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect1"
+       width="61.237671"
+       height="33.704609"
+       x="12.06885"
+       y="17.675318" />
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="27.198547"
+       y="36.550579"
+       id="text1"><tspan
+         id="tspan1"
+         style="font-size:5.64444px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="27.198547"
+         y="36.550579">Power Unit</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="24.853563"
+       y="87.737137"
+       id="text1-1"><tspan
+         id="tspan1-5"
+         style="font-size:5.64444px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="24.853563"
+         y="87.737137">Inbut Buffer</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="109.37483"
+       y="36.574009"
+       id="text1-1-5"><tspan
+         id="tspan1-5-2"
+         style="font-size:5.64444px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="109.37483"
+         y="36.574009">Gain 1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="156.9942"
+       y="87.737137"
+       id="text1-1-5-9"><tspan
+         id="tspan1-5-2-1"
+         style="font-size:5.64444px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="156.9942"
+         y="87.737137">Gain 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="149.64478"
+       y="36.08894"
+       id="text1-1-5-9-5"><tspan
+         id="tspan1-5-2-1-8"
+         style="font-size:5.64444px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="149.64478"
+         y="36.08894">Voicing Filter</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="207.59081"
+       y="87.995445"
+       id="text1-1-5-9-5-6"><tspan
+         id="tspan1-5-2-1-8-3"
+         style="font-size:5.64444px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="207.59081"
+         y="87.995445">Clean Blend</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="114.1208"
+       y="143.81662"
+       id="text1-1-5-9-5-6-2"><tspan
+         id="tspan1-5-2-1-8-3-9"
+         style="font-size:5.64444px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="114.1208"
+         y="143.81662">Tilt</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="98.085953"
+       y="191.3145"
+       id="text1-1-5-9-5-6-2-1"><tspan
+         id="tspan1-5-2-1-8-3-9-6"
+         style="font-size:5.64444px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="98.085953"
+         y="191.3145">Bypass Switch</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="190.02299"
+       y="143.29297"
+       id="text1-1-5-9-5-6-2-5"><tspan
+         id="tspan1-5-2-1-8-3-9-8"
+         style="font-size:5.64444px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+         x="190.02299"
+         y="143.29297">Output Buffer</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.999998;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect2"
+       width="62.080158"
+       height="33.563766"
+       x="11.226361"
+       y="68.839966" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3"
+       width="166.28471"
+       height="24.659096"
+       x="42.766438"
+       y="177.40848" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5"
+       width="38.840618"
+       height="33.704609"
+       x="148.5"
+       y="17.675318" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5-1"
+       width="38.840618"
+       height="33.704609"
+       x="148.5"
+       y="69.041634" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5-1-3"
+       width="38.840618"
+       height="33.704609"
+       x="204.90814"
+       y="69.041634" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5-6"
+       width="38.840618"
+       height="33.704609"
+       x="99.042679"
+       y="17.675318" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5-6-1"
+       width="38.840618"
+       height="33.704609"
+       x="99.042679"
+       y="124.8504" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect9"
+       width="68.395203"
+       height="33.704609"
+       x="175.35356"
+       y="124.85041" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="M 73.306518,85.632415 H 84.546836 V 175.50296"
+       id="path9" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 84.597459,85.632413 7.15e-4,-51.104788 12.595502,-3e-6"
+       id="path10" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="M 84.598173,33.970121 V 10.812532 l 139.858767,0.0041 2.6e-4,56.320432"
+       id="path11" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 84.598173,33.970121 v 0.557504 0"
+       id="path12" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 138.3833,34.527622 h 8.37907"
+       id="path13" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="M 167.92031,51.879927 V 67.285199"
+       id="path14" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 187.34062,85.893938 h 15.79075"
+       id="path15" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 224.32845,102.8075 -1e-5,10.0004 H 118.46299 v 10.2046"
+       id="path16" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 137.92156,141.7027 35.93836,1e-5"
+       id="path17" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-miterlimit:35.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="M 193.27183,159.05502 V 175.626"
+       id="path18" />
+  </g>
+</svg>

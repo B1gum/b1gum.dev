@@ -10,6 +10,8 @@
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.3.1",
     "date-fns": "^2.30.0",
+    "flubber": "^0.4.2",
+    "framer-motion": "^12.9.2",
     "gray-matter": "^4.0.3",
     "katex": "^0.16.22",
     "next": "latest",
