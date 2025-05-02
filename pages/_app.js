@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import { MDXProvider } from '@mdx-js/react'
 import { useMDXComponents } from '../mdx-components'
 import 'katex/dist/katex.min.css'
+import { Analytics } from '@vercel/analytics/next'
 
 export default function App({ Component, pageProps }) {
   const { pathname } = useRouter()
@@ -19,6 +20,7 @@ export default function App({ Component, pageProps }) {
       <MDXProvider components={mdxComponents}>
         <Layout home={true}>
           <Component {...pageProps} />
+          <Analytics />
         </Layout>
      </MDXProvider>
     )
@@ -27,6 +29,7 @@ export default function App({ Component, pageProps }) {
   return (
     <MDXProvider components={mdxComponents}>
       <Component {...pageProps} />
+      <Analytics />
     </MDXProvider>
   )
 }
